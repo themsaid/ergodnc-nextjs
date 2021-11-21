@@ -6,10 +6,11 @@ import Button from '../components/button'
 import Errors from '../components/errors'
 import {useState} from 'react'
 
-export default function Login() {
+export default function Register() {
+    const [name, ssetName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [remember, setRemember] = useState(false)
+    const [password_confirmation, setPasswordConfirmation] = useState('')
     const [errors, setErrors] = useState([])
 
     const submitForm = async event => {
@@ -19,7 +20,7 @@ export default function Login() {
     return (
         <>
             <Head>
-                <title>ergodnc — Login</title>
+                <title>ergodnc — Register</title>
             </Head>
 
             <div className={"w-1/2 mx-auto bg-white p-5 rounded-lg"}>
@@ -27,6 +28,20 @@ export default function Login() {
 
                 <form onSubmit={submitForm}>
                     <div>
+                        <Label htmlFor="email">Name</Label>
+
+                        <Input
+                            id="name"
+                            type="text"
+                            value={name}
+                            className="block mt-1 w-full"
+                            onChange={event => setName(event.target.value)}
+                            required
+                            autoFocus
+                        />
+                    </div>
+
+                    <div className="mt-4">
                         <Label htmlFor="email">Email</Label>
 
                         <Input
@@ -36,7 +51,6 @@ export default function Login() {
                             className="block mt-1 w-full"
                             onChange={event => setEmail(event.target.value)}
                             required
-                            autoFocus
                         />
                     </div>
 
@@ -50,37 +64,30 @@ export default function Login() {
                             className="block mt-1 w-full"
                             onChange={event => setPassword(event.target.value)}
                             required
-                            autoComplete="current-password"
                         />
                     </div>
 
-                    <div className="block mt-4">
-                        <label
-                            htmlFor="remember_me"
-                            className="inline-flex items-center">
-                            <input
-                                id="remember_me"
-                                type="checkbox"
-                                name="remember"
-                                checked={remember}
-                                onChange={event => setRemember(!remember)}
-                                className="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                            />
+                    <div className="mt-4">
+                        <Label htmlFor="password">Confirm Password</Label>
 
-                            <span className="ml-2 text-gray-600">
-                            Remember me
-                        </span>
-                        </label>
+                        <Input
+                            id="password_confirmation"
+                            type="password"
+                            value={password_confirmation}
+                            className="block mt-1 w-full"
+                            onChange={event => setPasswordConfirmation(event.target.value)}
+                            required
+                        />
                     </div>
 
                     <div className="flex items-center justify-end mt-4">
-                        <Link href="/forgot-password">
+                        <Link href="/login">
                             <a className="underline text-sm text-gray-600 hover:text-gray-900">
-                                Forgot your password?
+                                Already registered?
                             </a>
                         </Link>
 
-                        <Button className="ml-3">Login</Button>
+                        <Button className="ml-3">Register</Button>
                     </div>
                 </form>
             </div>
