@@ -15,8 +15,7 @@ export default function Profile() {
                 Hello Mohamed!
             </h1>
 
-            <span>Here's a list of your previous reservations!</span>
-
+            <span>Here is a list of your previous reservations!</span>
 
             <div className="flex pb-10 mt-10 border-b">
                 <div className="w-1/3 h-56 relative">
