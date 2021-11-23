@@ -63,9 +63,9 @@ export default function Profile() {
                             <span className="block font-semibold">Total ${reservation.price / 100}</span>
                         </div>
                         <p className="mb-5">
-                                                <span className="text-gray-600 text-sm uppercase">
-                                                    From <strong>{reservation.start_date.split('T')[0]}</strong> To <strong>{reservation.end_date.split('T')[0]}</strong>
-                                                </span>
+                            <span className="text-gray-600 text-sm uppercase">
+                                From <strong>{reservation.start_date.split('T')[0]}</strong> To <strong>{reservation.end_date.split('T')[0]}</strong>
+                            </span>
                         </p>
                         <p className="leading-loose mb-5">
                             {reservation.office.description}
