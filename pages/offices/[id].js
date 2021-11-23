@@ -11,7 +11,7 @@ export default function Office() {
 
             <div className="flex">
                 <div className="w-1/2 h-80 relative overflow-hidden rounded-lg">
-                    <img src="http://api.ergodnc.test/1.jpg" className="object-cover w-full h-full"></img>
+                    <img src="https://via.placeholder.com/400x400.png?text=PLACEHOLDER" className="object-cover w-full h-full"></img>
                 </div>
 
                 <div className="w-full pl-14">
