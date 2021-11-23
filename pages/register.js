@@ -26,7 +26,7 @@ export default function Register() {
             <div className={"w-1/2 mx-auto bg-white p-5 rounded-lg"}>
                 <Errors className="mb-5" errors={errors} />
 
-                <form onSubmit={submitForm}>
+                <form onSubmit={submitForm} autoComplete="off">
                     <div>
                         <Label htmlFor="email">Name</Label>
 
@@ -38,6 +38,7 @@ export default function Register() {
                             onChange={event => setName(event.target.value)}
                             required
                             autoFocus
+                            autoComplete="off"
                         />
                     </div>
 

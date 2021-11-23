@@ -25,7 +25,7 @@ export default function Login() {
             <div className={"w-1/2 mx-auto bg-white p-5 rounded-lg"}>
                 <Errors className="mb-5" errors={errors} />
 
-                <form onSubmit={submitForm}>
+                <form onSubmit={submitForm} autoComplete="off">
                     <div>
                         <Label htmlFor="email">Email</Label>
 
@@ -37,6 +37,7 @@ export default function Login() {
                             onChange={event => setEmail(event.target.value)}
                             required
                             autoFocus
+                            autoComplete="off"
                         />
                     </div>
 
