@@ -15,17 +15,19 @@ export default function Profile() {
                 Hello Mohamed!
             </h1>
 
-            <span>Here is a list of your previous reservations!</span>
+            <div className="mb-10">
+                <span>Here is a list of your previous reservations!</span>
+            </div>
 
-            <div className="flex pb-10 mt-10 border-b">
-                <div className="w-1/3 h-56 relative">
-                    <Image src="http://api.ergodnc.test/1.jpg" priority={true} className="rounded-lg object-cover" layout={"fill"}></Image>
+            <div className="flex pb-10 mb-10 border-b">
+                <div className="w-1/3 h-56 relative overflow-hidden rounded-lg">
+                    <img src="http://api.ergodnc.test/1.jpg" className="object-cover w-full h-full"></img>
                 </div>
 
                 <div className="w-full pl-14">
                     <div className="flex justify-between items-center mb-6">
                         <h1 className="text-2xl font-bold">Large office space</h1>
-                        <span className="block font-semibold">Jan 15, 2021</span>
+                        <span className="block font-semibold">$12 per day</span>
                     </div>
                     <p className="leading-loose mb-5">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aperiam delectus doloremque doloribus eius eligendi molestiae molestias nihil nostrum nulla obcaecati omnis, quia quidem sequi sunt tempora temporibus vero voluptatum?
@@ -37,14 +39,14 @@ export default function Profile() {
             </div>
 
             <div className="flex pb-10 mb-10 border-b">
-                <div className="w-1/3 h-56 relative">
-                    <Image src="http://api.ergodnc.test/2.jpg" priority={true} className="rounded-lg object-cover" layout={"fill"}></Image>
+                <div className="w-1/3 h-56 relative overflow-hidden rounded-lg">
+                    <img src="http://api.ergodnc.test/2.jpg" className="object-cover w-full h-full"></img>
                 </div>
 
                 <div className="w-full pl-14">
                     <div className="flex justify-between items-center mb-6">
                         <h1 className="text-2xl font-bold">Large office space</h1>
-                        <span className="block font-semibold">Jan 15, 2021</span>
+                        <span className="block font-semibold">$12 per day</span>
                     </div>
                     <p className="leading-loose mb-5">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aperiam delectus doloremque doloribus eius eligendi molestiae molestias nihil nostrum nulla obcaecati omnis, quia quidem sequi sunt tempora temporibus vero voluptatum?
@@ -56,14 +58,15 @@ export default function Profile() {
             </div>
 
             <div className="flex">
-                <div className="w-1/3 h-56 relative">
-                    <Image src="http://api.ergodnc.test/3.jpg" priority={true} className="rounded-lg object-cover" layout={"fill"}></Image>
+                <div className="w-1/3 h-56 relative overflow-hidden rounded-lg">
+                    <img src="http://api.ergodnc.test/3.jpg" className="object-cover w-full h-full"></img>
                 </div>
+
 
                 <div className="w-full pl-14">
                     <div className="flex justify-between items-center mb-6">
                         <h1 className="text-2xl font-bold">Large office space</h1>
-                        <span className="block font-semibold">Jan 15, 2021</span>
+                        <span className="block font-semibold">$12 per day</span>
                     </div>
                     <p className="leading-loose mb-5">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aperiam delectus doloremque doloribus eius eligendi molestiae molestias nihil nostrum nulla obcaecati omnis, quia quidem sequi sunt tempora temporibus vero voluptatum?

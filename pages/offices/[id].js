@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link'
 import Button from '../../components/button'
 
@@ -11,8 +10,8 @@ export default function Office() {
             </Head>
 
             <div className="flex">
-                <div className="w-1/2 h-80 relative">
-                    <Image src="http://api.ergodnc.test/1.jpg" priority={true} className="rounded-lg object-cover" layout={"fill"}></Image>
+                <div className="w-1/2 h-80 relative overflow-hidden rounded-lg">
+                    <img src="http://api.ergodnc.test/1.jpg" className="object-cover w-full h-full"></img>
                 </div>
 
                 <div className="w-full pl-14">
@@ -23,7 +22,7 @@ export default function Office() {
                     <p className="leading-loose mb-5">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aperiam delectus doloremque doloribus eius eligendi molestiae molestias nihil nostrum nulla obcaecati omnis, quia quidem sequi sunt tempora temporibus vero voluptatum?
                     </p>
-                    <Button className="mt-10">Book</Button>
+                    <Button className="mt-7">Book</Button>
                 </div>
             </div>
         </>

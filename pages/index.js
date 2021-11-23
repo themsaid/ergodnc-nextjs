@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Home() {
@@ -10,8 +9,8 @@ export default function Home() {
             </Head>
 
             <div className="flex pb-10 mb-10 border-b">
-                <div className="w-1/3 h-56 relative">
-                    <Image src="http://api.ergodnc.test/1.jpg" priority={true} className="rounded-lg object-cover" layout={"fill"}></Image>
+                <div className="w-1/3 h-56 relative overflow-hidden rounded-lg">
+                    <img src="http://api.ergodnc.test/1.jpg" className="object-cover w-full h-full"></img>
                 </div>
 
                 <div className="w-full pl-14">
@@ -29,8 +28,8 @@ export default function Home() {
             </div>
 
             <div className="flex pb-10 mb-10 border-b">
-                <div className="w-1/3 h-56 relative">
-                    <Image src="http://api.ergodnc.test/2.jpg" priority={true} className="rounded-lg object-cover" layout={"fill"}></Image>
+                <div className="w-1/3 h-56 relative overflow-hidden rounded-lg">
+                    <img src="http://api.ergodnc.test/2.jpg" className="object-cover w-full h-full"></img>
                 </div>
 
                 <div className="w-full pl-14">
@@ -48,9 +47,10 @@ export default function Home() {
             </div>
 
             <div className="flex">
-                <div className="w-1/3 h-56 relative">
-                    <Image src="http://api.ergodnc.test/3.jpg" priority={true} className="rounded-lg object-cover" layout={"fill"}></Image>
+                <div className="w-1/3 h-56 relative overflow-hidden rounded-lg">
+                    <img src="http://api.ergodnc.test/3.jpg" className="object-cover w-full h-full"></img>
                 </div>
+
 
                 <div className="w-full pl-14">
                     <div className="flex justify-between items-center mb-6">
