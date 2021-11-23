@@ -7,7 +7,7 @@ import Errors from '../components/errors'
 import {useState} from 'react'
 
 export default function Register() {
-    const [name, ssetName] = useState('')
+    const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [password_confirmation, setPasswordConfirmation] = useState('')

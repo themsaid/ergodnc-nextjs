@@ -11,7 +11,7 @@ export default function Home() {
 
             <div className="flex pb-10 mb-10 border-b">
                 <div className="w-1/3 h-56 relative">
-                    <Image src="http://api.ergodnc.test/1.jpg" className="rounded-lg" layout={"fill"}></Image>
+                    <Image src="http://api.ergodnc.test/1.jpg" priority={true} className="rounded-lg object-cover" layout={"fill"}></Image>
                 </div>
 
                 <div className="w-full pl-14">
@@ -30,7 +30,7 @@ export default function Home() {
 
             <div className="flex pb-10 mb-10 border-b">
                 <div className="w-1/3 h-56 relative">
-                    <Image src="http://api.ergodnc.test/2.jpg" className="rounded-lg" layout={"fill"}></Image>
+                    <Image src="http://api.ergodnc.test/2.jpg" priority={true} className="rounded-lg object-cover" layout={"fill"}></Image>
                 </div>
 
                 <div className="w-full pl-14">
@@ -49,7 +49,7 @@ export default function Home() {
 
             <div className="flex">
                 <div className="w-1/3 h-56 relative">
-                    <Image src="http://api.ergodnc.test/3.jpg" className="rounded-lg" layout={"fill"}></Image>
+                    <Image src="http://api.ergodnc.test/3.jpg" priority={true} className="rounded-lg object-cover" layout={"fill"}></Image>
                 </div>
 
                 <div className="w-full pl-14">
