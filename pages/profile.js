@@ -1,14 +1,16 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
+let user = {
+    name: 'Some User'
+};
+
 let reservations = [
     {
         "office": {
-            "images": [
-                {
-                    "path": "https://via.placeholder.com/400x400.png?text=PLACEHOLDER",
-                }
-            ],
+            "featured_image": {
+                "path": "https://via.placeholder.com/400x400.png?text=PLACEHOLDER",
+            },
             "id": 1,
             "title": "Office One",
             "description": "Architecto assumenda cum eum. Voluptas qui dignissimos qui voluptate. Mollitia necessitatibus ut sit. Et saepe ea quo nulla.",
@@ -19,11 +21,9 @@ let reservations = [
     },
     {
         "office": {
-            "images": [
-                {
-                    "path": "https://via.placeholder.com/400x400.png?text=PLACEHOLDER",
-                }
-            ],
+            "featured_image": {
+                "path": "https://via.placeholder.com/400x400.png?text=PLACEHOLDER",
+            },
             "id": 2,
             "title": "Office Wto",
             "description": "Quia voluptatem amet quo minus. Repudiandae sed beatae veritatis. Error quos quia qui pariatur perferendis beatae occaecati.",
@@ -43,17 +43,17 @@ export default function Profile() {
             </Head>
 
             <h1 className="text-3xl font-black mb-10">
-                Hello Mohamed!
+                Hello {user.name}!
             </h1>
 
             <div className="mb-10">
                 <span>Here is a list of your previous reservations!</span>
             </div>
 
-            {reservations.map((reservation, index) => (
+            {reservations ? reservations.map((reservation, index) => (
                 <div key={reservation.office.id} className={`flex ${index + 1 == reservations.length ? '' : 'pb-10 mb-10 border-b'}`}>
                     <div className="w-1/3 h-56 relative overflow-hidden rounded-lg">
-                        <img src={reservation.office.images[0].path} className="object-cover w-full h-full"></img>
+                        <img src={reservation.office.featured_image.path} className="object-cover w-full h-full"></img>
                     </div>
 
 
@@ -75,7 +75,7 @@ export default function Profile() {
                         </Link>
                     </div>
                 </div>
-            ))}
+            )) : ''}
         </>
     )
 }
