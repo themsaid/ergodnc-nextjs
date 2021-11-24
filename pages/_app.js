@@ -2,6 +2,8 @@ import 'tailwindcss/tailwind.css'
 import Link from 'next/link'
 import Button from '../components/button'
 
+let user = null;
+
 function MyApp({Component, pageProps}) {
     return (
         <>
@@ -17,12 +19,23 @@ function MyApp({Component, pageProps}) {
                         </Link>
 
                         <div className="flex items-center text-sm font-semibold">
-                            <Link href={"/login"}>
-                                <a className="text-gray-700 hover:text-purple-700">Sign In</a>
-                            </Link>
-                            <Link href={"/register"}>
-                                <a className="text-gray-700 ml-7 border border-gray-300 hover:border-gray-400 rounded px-4 py-2">Create Account</a>
-                            </Link>
+                            {user ?
+                                <>
+                                    <a href="#" className="text-gray-700 hover:text-purple-700" onClick={logout}>Log Out</a>
+                                    <Link href={"/profile"}>
+                                        <a className="text-gray-700 ml-7 border border-gray-300 hover:border-gray-400 rounded px-4 py-2">Profile</a>
+                                    </Link>
+                                </>
+                                :
+                                <>
+                                    <Link href={"/login"}>
+                                        <a className="text-gray-700 hover:text-purple-700">Sign In</a>
+                                    </Link>
+                                    <Link href={"/register"}>
+                                        <a className="text-gray-700 ml-7 border border-gray-300 hover:border-gray-400 rounded px-4 py-2">Create Account</a>
+                                    </Link>
+                                </>
+                            }
                         </div>
                     </div>
                 </main>
