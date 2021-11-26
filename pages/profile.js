@@ -1,40 +1,26 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import axios from "../lib/axios";
+import useAuth from "../lib/useAuth";
+import useSWR from "swr";
 
 let user = {
     name: 'Some User'
 };
 
-let reservations = [
-    {
-        "office": {
-            "featured_image": {
-                "path": "https://via.placeholder.com/400x400.png?text=PLACEHOLDER",
-            },
-            "id": 1,
-            "title": "Office One",
-            "description": "Architecto assumenda cum eum. Voluptas qui dignissimos qui voluptate. Mollitia necessitatibus ut sit. Et saepe ea quo nulla.",
-        },
-        "start_date": "2021-10-23T17:03:41",
-        "end_date": "2021-11-12T17:03:41",
-        "price": 12000,
-    },
-    {
-        "office": {
-            "featured_image": {
-                "path": "https://via.placeholder.com/400x400.png?text=PLACEHOLDER",
-            },
-            "id": 2,
-            "title": "Office Wto",
-            "description": "Quia voluptatem amet quo minus. Repudiandae sed beatae veritatis. Error quos quia qui pariatur perferendis beatae occaecati.",
-        },
-        "start_date": "2021-08-23T17:03:41",
-        "end_date": "2021-09-30T17:03:41",
-        "price": 19000,
-    }
-];
+
 
 export default function Profile() {
+    const {user, isLoading} = useAuth({middleware: 'auth'})
+
+    const {data: reservations, error, mutate} = useSWR('/reservations', () =>
+        axios.get('/reservations')
+            .then(response => response.data.data),
+    )
+
+    if (isLoading || !user){
+        return <>Loading...</>
+    }
 
     return (
         <>

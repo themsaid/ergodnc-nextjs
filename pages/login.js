@@ -5,6 +5,7 @@ import Input from '../components/input'
 import Button from '../components/button'
 import Errors from '../components/errors'
 import {useState} from 'react'
+import useAuth from '../lib/useAuth'
 
 export default function Login() {
     const [email, setEmail] = useState('')
@@ -12,8 +13,16 @@ export default function Login() {
     const [remember, setRemember] = useState(false)
     const [errors, setErrors] = useState([])
 
+    const {login, isLoading, user} = useAuth({middleware: 'guest'})
+
     const submitForm = async event => {
         event.preventDefault()
+
+        login({email, password, remember, setErrors});
+    }
+
+    if (isLoading || user) {
+        return <>Loading...</>
     }
 
     return (

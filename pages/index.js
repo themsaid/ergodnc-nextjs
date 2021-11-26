@@ -2,7 +2,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import axios from '../lib/axios'
 
-export default function Home() {
+
+export default function Home({offices}) {
     return (
         <>
             <Head>

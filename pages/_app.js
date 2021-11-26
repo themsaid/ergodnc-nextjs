@@ -1,10 +1,11 @@
 import 'tailwindcss/tailwind.css'
 import Link from 'next/link'
 import Button from '../components/button'
-
-let user = null;
+import useAuth from '../lib/useAuth'
 
 function MyApp({Component, pageProps}) {
+    const {user, logout} = useAuth()
+
     return (
         <>
             <div className="bg-white">

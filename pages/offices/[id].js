@@ -1,20 +1,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Button from '../../components/button'
+import axios from '../../lib/axios'
 
-let office = {
-    "images": [
-        {
-            "path": "https://via.placeholder.com/400x400.png?text=PLACEHOLDER",
-        }
-    ],
-    "id": 1,
-    "title": "Office One",
-    "description": "Architecto assumenda cum eum. Voluptas qui dignissimos qui voluptate. Mollitia necessitatibus ut sit. Et saepe ea quo nulla.",
-    "price_per_day": 1000,
-};
 
-export default function Office() {
+export default function Office({office}) {
     return (
         <>
             <Head>
@@ -39,4 +29,25 @@ export default function Office() {
             </div>
         </>
     )
+}
+
+export async function getStaticPaths() {
+    const response = await axios.get('/offices');
+
+    return {
+        fallback: false,
+        paths: response.data.data.map(office => ({
+            params: {id: office.id.toString()}
+        }))
+    };
+}
+
+export async function getStaticProps({params}) {
+    const response = await axios.get(`/offices/${params.id}`);
+
+    return {
+        props: {
+            office: response.data.data
+        },
+    }
 }
