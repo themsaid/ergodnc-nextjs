@@ -1,4 +1,4 @@
-export default function Label({ errors = [], ...props }) {
+export default function Errors({ errors = [], ...props }) {
     return (
         <>
             {errors.length > 0 && (
